@@ -52,6 +52,9 @@
 
         </ul>
       </div>
+        <form class="form-inline">
+            <input class="form-control" type="text" placeholder="Suchen" aria-label="Search">
+        </form>
     </div>
   </nav>
 
