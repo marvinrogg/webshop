@@ -65,7 +65,7 @@
       <div class="col-lg-3">
 
 
-        <h1 class="my-4">Loginseite</h1>
+        <h1 class="my-4">Login</h1>
 
 
 
@@ -74,7 +74,7 @@
 
       </div>
       <!--xxx Div mit Karte -->
-      <form action="login.php" method="get">
+      <form action="logincheck.php" method="get">
         Benutzername: <input type="text" name="name">
         <br>
         Password:
@@ -85,11 +85,50 @@
         <input class="btn btn-outline-dark" type="reset">
 
 
-      </form>
+
 
 
 
     </div>
+      <div class="row">
+          <div class="col-lg-3">
+
+              <h1 class="my-4">Registrieren</h1>
+
+          </div>
+          </form>
+
+          <form action="loginregister.php" method="get">
+              Benutzername: <input type="text" name="benutzername">
+              <br>
+              Password:
+              <input type="password" name="password">
+              <br>
+              Name:
+              <input type="text" name="name">
+              <br>
+              Vorname:
+              <input type="text" name="vorname">
+              <br>
+              Postleitzahl:
+              <input type="text" name="plz">
+              <br>
+              Ort:
+              <input type="text" name="ort">
+              <br>
+              Straße:
+              <input type="text" name="straße">
+              <br>
+              E-Mail:
+              <input type="text" name="email">
+              <br>
+              <br>
+              <input  class="btn btn-outline-dark" type="submit" value="Registrieren">
+              <input class="btn btn-outline-dark" type="reset">
+
+
+          </form>
+      </div>
 
 
   </div>
