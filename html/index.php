@@ -19,6 +19,10 @@
 </head>
 
 <body>
+<?php
+session_start();
+include 'isLoggedIn.php';
+?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

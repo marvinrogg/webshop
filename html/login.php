@@ -84,11 +84,6 @@
         <input  class="btn btn-outline-dark" type="submit" value="Anmelden">
         <input class="btn btn-outline-dark" type="reset">
 
-
-
-
-
-
     </div>
       <div class="row">
           <div class="col-lg-3">
