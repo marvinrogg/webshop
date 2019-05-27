@@ -1,18 +1,18 @@
 <?php
 $mysqli = new mysqli("localhost", "root", "", "Cemquarium");
-if ($mysqli->connect_error){
+if ($mysqli->connect_error) {
     die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
 }
 $id = "1";
 $sql = "SELECT * FROM Produkt
         WHERE ?;";
 
-$statement= $mysqli->prepare($sql);
+$statement = $mysqli->prepare($sql);
 $statement->bind_param('s', $id);
 $statement->execute();
 $result = $statement->get_result();
 
-while($row = $result->fetch_object()) {
+while ($row = $result->fetch_object()) {
     $name = $row->name;
     $beschreibung = $row->beschreibung;
     $preis = $row->preis;
@@ -22,13 +22,27 @@ while($row = $result->fetch_object()) {
               <a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">'.$name.'</a>
+                  <a href="#">' . $name . '</a>
                 </h4>
-                <h5>'.$preis.'€</h5>
-                <p class="card-text">'.$beschreibung.'</p>';
+                <h5>' . $preis . '€</h5>
+                <p class="card-text">' . $beschreibung . '</p>';
 
-                  include 'addtowarenkorb.php';
-     echo '             
+    if (isset($_SESSION['username'])) {
+        // ist eingeloggt
+        $benutzer = $_SESSION['username'];
+        // set feld mit id login auf hidden
+
+        echo '<button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>';
+
+
+    } else {
+        // nicht eingeloggt
+        // header("location: login.php");
+        // set Feld mit id logout auf hidden
+
+
+    }
+    echo '             
               </div>
             </div>
           </div>';
