@@ -20,7 +20,10 @@
 
 <body>
 
-
+<?php
+session_start();
+include 'isLoggedIn.php';
+?>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -42,13 +45,15 @@
                     <a class="nav-link" href="kontakt.php">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <?php
+                    include 'loginlogoutbutton.php';
+                    ?>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="warenkorb.php">Warenkorb</a>
+                    <?php
+                    include 'showwarenkorb.php';
+                    ?>
                 </li>
 
             </ul>
@@ -58,7 +63,6 @@
         </form>
     </div>
 </nav>
-
 
 <!-- Page Content -->
   <div class="container">
@@ -100,20 +104,9 @@
       </div>
       <!-- /.col-lg-3 -->
 
-      <div class="col-lg-6">
-
-        <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="/webshop/pictures/lobster.jpg" alt="">
-          <div class="card-body">
-            <h3 class="card-title">Product Name</h3>
-            <h4>$24.99</h4>
-            <p class="card-text">**Produktbeschreibung**</p>
-            <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
-          </div>
-        </div>
-
-
-      </div>
+        <?php
+        include 'readitem.php'
+        ?>
       <!-- /.col-lg-9 -->
 
     </div>
