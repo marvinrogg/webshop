@@ -22,6 +22,7 @@
 <?php
 session_start();
 include 'isLoggedIn.php';
+include 'loginlogoutbutton.php';
 ?>
 
   <!-- Navigation -->
@@ -45,11 +46,11 @@ include 'isLoggedIn.php';
             <a class="nav-link" href="kontakt.php">Kontakt</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+              <?php
+              include 'loginlogoutbutton.php';
+              ?>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="warenkorb.php">Warenkorb</a>
           </li>
