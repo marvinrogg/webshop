@@ -22,7 +22,6 @@
 <?php
 session_start();
 include 'isLoggedIn.php';
-include 'loginlogoutbutton.php';
 ?>
 
   <!-- Navigation -->
@@ -52,7 +51,9 @@ include 'loginlogoutbutton.php';
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="warenkorb.php">Warenkorb</a>
+              <?php
+              include 'showwarenkorb.php';
+              ?>
           </li>
 
         </ul>
@@ -122,7 +123,9 @@ include 'loginlogoutbutton.php';
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">**Produktbeschreibung**</p>
-                <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
+                <?php
+                include 'addtowarenkorb.php';
+                ?>
               </div>
             </div>
           </div>
@@ -136,7 +139,9 @@ include 'loginlogoutbutton.php';
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">**Produktbeschreibung**</p>
-                <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
+                  <?php
+                  include 'addtowarenkorb.php';
+                  ?>
               </div>
             </div>
           </div>
@@ -150,7 +155,9 @@ include 'loginlogoutbutton.php';
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">**Produktbeschreibung**</p>
-                <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
+                  <?php
+                  include 'addtowarenkorb.php';
+                  ?>
               </div>
             </div>
           </div>
