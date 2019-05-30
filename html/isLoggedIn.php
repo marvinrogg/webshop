@@ -9,7 +9,20 @@ if (isset($_SESSION['username'])) {
     // nicht eingeloggt
    // header("location: login.php");
     print "nicht eingeloggt";
-
 }
+
+//Timeout nach x sekunden
+$time = $_SERVER['Reqeust_TIME'];
+/**
+* Timeout for 20sec // muss noch erhöcht werden auf 600
+*/
+$timeout_duration = 20;
+if(isset($_SESSION['Last_ACTIVICTY']) && ($time - $_SESSION['Last_ACTIVICTY']) > $timeout_duration)
+{
+	session_unset();
+	session_destroy();
+	header("location: index.php");
+}
+$_SESSION['Last_ACTIVICTY'] = $time;
 
 ?> 
