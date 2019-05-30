@@ -7,10 +7,11 @@ $mysqli = new mysqli("localhost", "root", "", "Cemquarium");
 if ($mysqli->connect_error){
     die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
 }
-$sql = "SELECT * FROM User
-        WHERE username =?
-        AND password=?;";
+$sql = "INSERT INTO `Cemquarium`.`Warenkorb_has_Produkt` (`Warenkorb_id`, `Produkt_id`) 
+        VALUES (1, ?);";
 $statement= $mysqli->prepare($sql);
-$statement->bind_param('ss', $benutzer, $password);
+$statement->bind_param('s', $idartikel);
 $statement->execute();
 $result = $statement->get_result();
+
+header("location: index.php");
