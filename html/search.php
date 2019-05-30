@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+<?php
+
+$search = "%{$_GET['search']}%";
+$search2 = $search;
+
+//print "Daten: $search";
+
+$mysqli = new mysqli("localhost", "root", "", "Cemquarium");
+if ($mysqli->connect_error){
+    die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
+}
+$sql = "SELECT * 
+        FROM Produkt 
+        WHERE name LIKE ? 
+        OR beschreibung LIKE ? 
+        GROUP BY id";
+
+$statement= $mysqli->prepare($sql);
+$statement->bind_param('ss', $search, $search2);
+$statement->execute();
+$result = $statement->get_result();
+
+echo'<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,11 +40,11 @@
 
 </head>
 
-<body>
-<?php
+<body>';
+
 session_start();
 include 'isLoggedIn.php';
-?>
+echo'
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -45,15 +67,15 @@ include 'isLoggedIn.php';
             <a class="nav-link" href="kontakt.php">Kontakt</a>
           </li>
           <li class="nav-item">
-              <?php
+              ';
               include 'loginlogoutbutton.php';
-              ?>
+              echo'
           </li>
 
           <li class="nav-item">
-              <?php
+              ';
               include 'showwarenkorb.php';
-              ?>
+              echo'
           </li>
 
         </ul>
@@ -109,15 +131,46 @@ include 'isLoggedIn.php';
 
       <div class="col-lg-9">
 
-        <div class="row">
+        <div class="row">';
+
+while ($row = $result->fetch_object()) {
+    $name = $row->name;
+    $beschreibung = $row->beschreibung;
+    $preis = $row->preis;
+    $bild = $row->bild;
+    // print $bild;
+
+    echo '<div class="col-lg-4 col-md-6 mb-4">
+            <div class="card mt-4">
+              <a href="#"><img class="card-img-top" src="' . $bild . '" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">' . $name . '</a>
+                </h4>
+                <h5>' . $preis . '€</h5>
+                <p class="card-text">' . $beschreibung . '</p>';
+
+    if (isset($_SESSION['username'])) {
+        // ist eingeloggt
+        $benutzer = $_SESSION['username'];
+        // set feld mit id login auf hidden
+
+        echo '<button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>';
 
 
-            <?php
-            include 'readitemfromdb.php'
-            ?>
+    } else {
+        // nicht eingeloggt
+        // header("location: login.php");
+        // set Feld mit id logout auf hidden
 
 
-        </div>
+    }
+    echo '             
+              </div>
+            </div>
+          </div>';
+}
+echo'</div>
         <!-- /.row -->
 
       </div>
@@ -144,3 +197,4 @@ include 'isLoggedIn.php';
 </body>
 
 </html>
+';
