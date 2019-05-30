@@ -17,7 +17,7 @@ while ($row = $result->fetch_object()) {
     $beschreibung = $row->beschreibung;
     $preis = $row->preis;
     $bild = $row->bild;
-    print $bild;
+   // print $bild;
 
     echo '<div class="col-lg-4 col-md-6 mb-4">
             <div class="card mt-4">
