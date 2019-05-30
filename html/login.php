@@ -83,6 +83,7 @@
         <br>
         <input  class="btn btn-outline-dark" type="submit" value="Anmelden">
         <input class="btn btn-outline-dark" type="reset">
+      </form>
 
     </div>
       <div class="row">
@@ -91,7 +92,7 @@
               <h1 class="my-4">Registrieren</h1>
 
           </div>
-          </form>
+
 
           <form action="loginregister.php" method="get">
               Benutzername: <input type="text" name="benutzername">
