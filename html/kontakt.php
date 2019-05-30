@@ -18,7 +18,12 @@
 
 </head>
 
+
 <body>
+<?php
+session_start();
+include 'isLoggedIn.php';
+?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -30,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Kontakt
+            <a class="nav-link" href="index.php">Startseite
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -41,13 +46,15 @@
             <a class="nav-link" href="kontakt.php">Kontakt</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+              <?php
+              include 'loginlogoutbutton.php';
+              ?>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="warenkorb.php">Warenkorb</a>
+              <?php
+              include 'showwarenkorb.php';
+              ?>
           </li>
 
         </ul>
@@ -103,9 +110,8 @@
 
         <div class="row">
 
-          <<div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card mt-4">
-              <a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <h1>Standort Offenburg</h1>
@@ -121,9 +127,8 @@
             </div>
           </div>
 
-          <<div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card mt-4">
-              <a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <h1>Standort Freiburg</h1>
