@@ -14,9 +14,9 @@ if (isset($_SESSION['username'])) {
 //Timeout nach x sekunden
 $time = $_SERVER['REQUEST_TIME'];
 /**
-* Timeout for 20sec // muss noch erhöcht werden auf 600
+* Timeout for 10min 
 */
-$timeout_duration = 20;
+$timeout_duration = 600;
 if(isset($_SESSION['Last_ACTIVICTY']) && ($time - $_SESSION['Last_ACTIVICTY']) > $timeout_duration)
 {
 	session_unset();
