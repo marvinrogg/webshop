@@ -72,40 +72,37 @@ include 'isLoggedIn.php';
       <div class="col-lg-3">
 
         <h1 class="my-4">Willkommen im Shop</h1>
-        <div class="list-group">
 
+          <!-- Example split danger button -->
+          <div class="btn-group">
+              <a  href="aquarium.php"><button type="button" class="btn btn-secondary">Aquarien</button></a>
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="suesswasser.php">Süßwasser</a>
+                  <a class="dropdown-item" href="meerwasser.php">Meerwasser</a>
 
-
-          <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Kategorie1
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Unterkategorie1</a>
-              <a class="dropdown-item" href="#">Unterkategorie2</a>
-
-            </div>
-
-          </div>
-          <br>
-          <br>
-          <br>
-          <br>
-
-          <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Kategorie2
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Unterkategorie1</a>
-              <a class="dropdown-item" href="#">Unterkategorie2</a>
-
-            </div>
-
-
+              </div>
           </div>
 
-        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+
+
+          <div class="btn-group">
+              <a  href="aquariumtechnik.php"><button type="button" class="btn btn-secondary">Aqaurientechnik</button></a>
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="pumpen.php">Pumpen</a>
+                  <a class="dropdown-item" href="heizung.php">Heizung</a>
+
+              </div>
+          </div>
 
       </div>
       <!-- /.col-lg-3 -->
