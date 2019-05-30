@@ -1,5 +1,5 @@
 /*Produkt*/
-Select p.name
+Select p.*
 from produkt p, unterkategorie uk, kategorie k
 Where k.name='?'
 and uk.name='?';
@@ -19,3 +19,14 @@ from kategorie;
 Select id
 from produkt
 Where name='?';
+
+Select *
+from Produkt
+where Unterkategorie_id =1
+OR Unterkategorie_id =2
+;
+
+INSERT INTO `Cemquarium`.`Warenkorb` (`id`, `User_username`) VALUES (1, 'Cem');
+
+
+INSERT INTO `Cemquarium`.`Warenkorb_has_Produkt` (`Warenkorb_id`, `Produkt_id`) VALUES (1, 1);
