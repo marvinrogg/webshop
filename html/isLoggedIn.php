@@ -12,7 +12,7 @@ if (isset($_SESSION['username'])) {
 }
 
 //Timeout nach x sekunden
-$time = $_SERVER['Reqeust_TIME'];
+$time = $_SERVER['REQUEST_TIME'];
 /**
 * Timeout for 20sec // muss noch erhöcht werden auf 600
 */
