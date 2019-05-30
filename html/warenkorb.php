@@ -3,21 +3,20 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Shop Warenkorb - Cemquarium</title>
+  <title>Shop Homepage - Cemquarium</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
 
 </head>
-
 
 <body>
 <?php
@@ -59,127 +58,88 @@ include 'isLoggedIn.php';
 
         </ul>
       </div>
-        <form class="form-inline">
-            <input class="form-control" type="text" placeholder="Suchen" aria-label="Search">
+        <form action="search.php" class="form-inline" method="get">
+            <input class="form-control" type="text" name="search" placeholder="Suchen" aria-label="Search">
         </form>
     </div>
   </nav>
 
-<!-- Page Content -->
-<div class="container">
+  <!-- Page Content -->
+  <div class="container">
 
     <div class="row">
 
-        <div class="col-lg-3">
+      <div class="col-lg-3">
 
-            <h1 class="my-4">Warenkorb</h1>
-            <div class="btn-group">
-                <a  href="aquarium.php"><button type="button" class="btn btn-secondary">Aquarien</button></a>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="suesswasser.php">Süßwasser</a>
-                    <a class="dropdown-item" href="meerwasser.php">Meerwasser</a>
+        <h1 class="my-4">Willkommen im Shop</h1>
 
-                </div>
-            </div>
+          <!-- Example split danger button -->
+          <div class="btn-group">
+              <a  href="aquarium.php"><button type="button" class="btn btn-secondary">Aquarien</button></a>
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="suesswasser.php">Süßwasser</a>
+                  <a class="dropdown-item" href="meerwasser.php">Meerwasser</a>
 
-            <br>
-            <br>
-            <br>
-            <br>
+              </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+          <br>
 
 
-            <div class="btn-group">
-                <a  href="aquariumtechnik.php"><button type="button" class="btn btn-secondary">Aqaurientechnik</button></a>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="pumpen.php">Pumpen</a>
-                    <a class="dropdown-item" href="heizung.php">Heizung</a>
+          <div class="btn-group">
+              <a  href="aquariumtechnik.php"><button type="button" class="btn btn-secondary">Aqaurientechnik</button></a>
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="pumpen.php">Pumpen</a>
+                  <a class="dropdown-item" href="heizung.php">Heizung</a>
 
-                </div>
-            </div>
+              </div>
+          </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="row">
+
+
+            <?php
+            include 'readwarenkorbfromdb.php';
+            ?>
+
 
         </div>
-        <!-- /.col-lg-3 -->
+        <!-- /.row -->
 
-        <div class="col-lg-9">
-
-            <div class="column">
-<br>
-
-                <div class="row">
-                    <div class="col-sm-4"><a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg"
-                                                           alt=""></a></div>
-                    <div class="col-sm-8"><h4 class="card-title">
-                        <a href="#">Item Two</a>
-                    </h4>
-                        <h5>$24.99</h5>
-                        <p class="card-text">**Produktbeschreibung**</p>
-                        <button type="button" class="btn btn-outline-dark">Aus Warenkorb entfernen</button>
-                    </div>
-                </div>
-
-<br>
-
-
-
-                <div class="row">
-                    <div class="col-sm-4"><a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg"
-                                                           alt=""></a></div>
-                    <div class="col-sm-8"><h4 class="card-title">
-                        <a href="#">Item Two</a>
-                    </h4>
-                        <h5>$24.99</h5>
-                        <p class="card-text">**Produktbeschreibung**</p>
-                        <button type="button" class="btn btn-outline-dark">Aus Warenkorb entfernen</button>
-                    </div>
-                </div>
-
-                <br>
-
-                <div class="row">
-                    <div class="col-sm-4"><a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg"
-                                                           alt=""></a></div>
-                    <div class="col-sm-8"><h4 class="card-title">
-                        <a href="#">Item Two</a>
-                    </h4>
-                        <h5>$24.99</h5>
-                        <p class="card-text">**Produktbeschreibung**</p>
-                        <button type="button" class="btn btn-outline-dark">Aus Warenkorb entfernen</button>
-                    </div>
-                </div>
-                <br>
-
-
-
-
-            </div>
-            <!-- /.row -->
-
-        </div>
-        <!-- /.col-lg-9 -->
+      </div>
+      <!-- /.col-lg-9 -->
 
     </div>
     <!-- /.row -->
 
-</div>
-<!-- /.container -->
+  </div>
+  <!-- /.container -->
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Cemquarium 2019</p>
     </div>
     <!-- /.container -->
-</footer>
+  </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
