@@ -1,19 +1,16 @@
 <?php
 
-if (isset($_SESSION['username'])) {
-    // ist eingeloggt
-    $benutzer = $_SESSION['username'];
-    // set feld mit id login auf hidden
+$idartikel = $_GET["idartikel"];
+//print "Daten: $idartikel";
 
-    echo '<button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>';
-
-
-} else {
-    // nicht eingeloggt
-    // header("location: login.php");
-    // set Feld mit id logout auf hidden
-
-
+$mysqli = new mysqli("localhost", "root", "", "Cemquarium");
+if ($mysqli->connect_error){
+    die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
 }
-
-?>
+$sql = "SELECT * FROM User
+        WHERE username =?
+        AND password=?;";
+$statement= $mysqli->prepare($sql);
+$statement->bind_param('ss', $benutzer, $password);
+$statement->execute();
+$result = $statement->get_result();
