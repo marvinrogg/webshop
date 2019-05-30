@@ -45,13 +45,15 @@ include 'isLoggedIn.php';
             <a class="nav-link" href="kontakt.php">Kontakt</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+              <?php
+              include 'loginlogoutbutton.php';
+              ?>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="warenkorb.php">Warenkorb</a>
+              <?php
+              include 'showwarenkorb.php';
+              ?>
           </li>
 
         </ul>
@@ -112,47 +114,10 @@ include 'isLoggedIn.php';
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card mt-4">
-              <a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">**Produktbeschreibung**</p>
-                <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card mt-4">
-              <a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">**Produktbeschreibung**</p>
-                <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card mt-4">
-              <a href="#"><img class="card-img-top" src="/webshop/pictures/lobster.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">**Produktbeschreibung**</p>
-                <button type="button" class="btn btn-outline-dark">Warenkorb hinzufügen</button>
-              </div>
-            </div>
-          </div>
+            <?php
+            include 'readitemfromdb.php'
+            ?>
 
 
         </div>
