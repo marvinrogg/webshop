@@ -39,7 +39,7 @@ include 'isLoggedIn.php';
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ueberuns.php">Über uns</a>
+            <a class="nav-link" href="kontakt.php">Über uns</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="kontakt.php">Kontakt</a>
