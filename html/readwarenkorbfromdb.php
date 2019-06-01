@@ -1,16 +1,18 @@
 <?php
-$warenkorbid = 1;
 
 $mysqli = new mysqli("localhost", "root", "", "Cemquarium");
-if ($mysqli->connect_error){
+if ($mysqli->connect_error) {
     die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
 }
-$sql = "SELECT p.name, p.id, p.beschreibung, p.preis, p.bild
-        FROM Produkt p, Warenkorb w, Warenkorb_has_Produkt wp
-        WHERE wp.Warenkorb_id = ? AND p.id = wp.Produkt_id;";
-		
+$sql = "SELECT p.name, p.id, p.beschreibung, p.preis, p.bild 
+        FROM Produkt p, Warenkorb w, Warenkorb_has_Produkt wp, User u 
+        Where p.id = wp.Produkt_id 
+        AND wp.Warenkorb_id = w.id 
+        AND w.User_username = u.username 
+        AND u.username= ?;";
+
 $statement = $mysqli->prepare($sql);
-$statement->bind_param('s', $warenkorbid);
+$statement->bind_param('s', $_SESSION['username']);
 $statement->execute();
 $result = $statement->get_result();
 

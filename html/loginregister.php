@@ -34,6 +34,8 @@ if($statement->execute()){
     $statement= $mysqli->prepare($sql);
     $statement->bind_param('s', $benutzer);
     $statement->execute();
+    $new_id = $statement->insert_id;
+    $_SESSION['warenkorbid'] = $new_id;
     header("location: index.php");
     exit();
 

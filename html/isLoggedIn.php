@@ -5,6 +5,7 @@ if (isset($_SESSION['username'])) {
     $benutzer = $_SESSION['username'];
     print $benutzer;
 
+
 } else {
     // nicht eingeloggt
    // header("location: login.php");
