@@ -19,23 +19,29 @@ $sql = "INSERT INTO `User`(`username`, `password`, `name`, `Vorname`, `PLZ`, `or
         VALUES (?,?,?,?,?,?,?,?);";
 $statement= $mysqli->prepare($sql);
 $statement->bind_param('ssssssss', $benutzer, $password, $name, $vorname, $plz, $ort, $straße, $email);
-$statement->execute();
-$result = $statement->get_result();
+if($statement->execute()){
 
-
-$anzahl = $result->num_rows;
-
-
-if ($anzahl > 0) {
-// alles okay
     session_start();
     $_SESSION['username'] = $benutzer;
+
+    $mysqli = new mysqli("localhost", "root", "", "Cemquarium");
+    if ($mysqli->connect_error){
+        die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
+    }
+
+
+    $sql = "INSERT INTO `Warenkorb`(`User_username`) VALUES (?);";
+    $statement= $mysqli->prepare($sql);
+    $statement->bind_param('s', $benutzer);
+    $statement->execute();
     header("location: index.php");
     exit();
-}else {
-    // Benutzerdaten falsch
+
+}else{
+
     header("location: login.php");
     exit();
 }
+
 
 

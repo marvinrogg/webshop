@@ -5,9 +5,9 @@ $mysqli = new mysqli("localhost", "root", "", "Cemquarium");
 if ($mysqli->connect_error){
     die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
 }
-$sql = "SELECT P.name, P.id, P.beschreibung, P.preis, P.bild
+$sql = "SELECT p.name, p.id, p.beschreibung, p.preis, p.bild
         FROM Produkt p, Warenkorb w, Warenkorb_has_Produkt wp
-        WHERE wp.Warenkorb_id = ? AND p.id = wp.Produkt_id;
+        WHERE wp.Warenkorb_id = ? AND p.id = wp.Produkt_id;";
 		
 $statement = $mysqli->prepare($sql);
 $statement->bind_param('s', $warenkorbid);
@@ -19,6 +19,7 @@ while ($row = $result->fetch_object()) {
     $beschreibung = $row->beschreibung;
     $preis = $row->preis;
     $bild = $row->bild;
+    $idartikel = $row->id;
     // print $bild;
 
     echo '<div class="col-lg-4 col-md-6 mb-4">
@@ -30,12 +31,31 @@ while ($row = $result->fetch_object()) {
                 </h4>
                 <h5>' . $preis . '€</h5>
                 <p class="card-text">' . $beschreibung . '</p>';
-				<button type="button" class="btn btn-outline-dark">Aus Warenkorb entfernen</button>
-				<button type="button" class="btn btn-outline-dark">Zahlen</button>
+
+    if (isset($_SESSION['username'])) {
+        // ist eingeloggt
+        $benutzer = $_SESSION['username'];
+        // set feld mit id login auf hidden
+
+        echo '<form action="deletefromwarenkorb.php" method="get">
+        
+        <button class="btn btn-outline-dark" name="idartikel" type="submit" value=' . $idartikel . '>Warenkorb entfernen</button>
+        
+      </form>';
+
+
+    } else {
+        // nicht eingeloggt
+        // header("location: login.php");
+        // set Feld mit id logout auf hidden
+
+
+    }
     echo '             
               </div>
             </div>
           </div>';
 }
+
 //$numberofarticel = $result->num_rows;
-// for ($i=0; $i < $numberofarticel; $i++){}
+// for ($i=0; $i < $numberofarticel; $i++){}+){}
