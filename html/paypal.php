@@ -25,7 +25,7 @@ while ($row = $result->fetch_object()) {
     $name = "Warenkorb";
     $preis = $preis + $row->preis;
     $bild = $row->bild;
-    $idartikel =$row->id;
+    $idartikel .=  $row->id . 0;
 }
 
 echo'
