@@ -24,6 +24,7 @@ session_start();
 include 'isLoggedIn.php';
 ?>
 
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -119,9 +120,9 @@ include 'isLoggedIn.php';
 
         </div>
         <!-- /.row -->
-          <input type="image" name="submit" border="0"
-                 src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
-          <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+          <?php
+          include 'paypal.php';
+          ?>
       </div>
       <!-- /.col-lg-9 -->
 
