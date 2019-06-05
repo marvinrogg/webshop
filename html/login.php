@@ -19,6 +19,10 @@
 </head>
 
 <body>
+<?php
+session_start();
+include 'isLoggedIn.php';
+?>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -35,25 +39,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ueberuns.php">Über uns</a>
+                    <a class="nav-link" href="kontakt.php">Über uns</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kontakt.php">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <?php
+                    include 'loginlogoutbutton.php';
+                    ?>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="warenkorb.php">Warenkorb</a>
+                    <?php
+                    include 'showwarenkorb.php';
+                    ?>
                 </li>
 
             </ul>
         </div>
-        <form class="form-inline">
-            <input class="form-control" type="text" placeholder="Suchen" aria-label="Search">
+        <form action="search.php" class="form-inline" method="get">
+            <input class="form-control" type="text" name="search" placeholder="Suchen" aria-label="Search">
         </form>
     </div>
 </nav>
@@ -131,16 +137,16 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+<footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Cemquarium 2019</p>
     </div>
     <!-- /.container -->
-  </footer>
+</footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

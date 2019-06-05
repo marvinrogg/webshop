@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Cemquarium</title>
+    <title>Aquarien - Cemquarium</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@ include 'isLoggedIn.php';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ueberuns.php">Über uns</a>
+                    <a class="nav-link" href="kontakt.php">Über uns</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kontakt.php">Kontakt</a>
@@ -71,7 +71,7 @@ include 'isLoggedIn.php';
 
         <div class="col-lg-3">
 
-            <h1 class="my-4">Willkommen im Shop</h1>
+            <h1 class="my-4">Aquarien</h1>
             <!-- Example split danger button -->
             <div class="btn-group">
                 <a  href="aquarium.php"><button type="button" class="btn btn-secondary">Aquarien</button></a>

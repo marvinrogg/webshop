@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Homepage - Cemquarium</title>
+  <title>Kontakt - Cemquarium</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,46 +25,45 @@ session_start();
 include 'isLoggedIn.php';
 ?>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Cemquarium</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Startseite
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ueberuns.php">Über uns</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="kontakt.php">Kontakt</a>
-          </li>
-          <li class="nav-item">
-              <?php
-              include 'loginlogoutbutton.php';
-              ?>
-          </li>
+        <a class="navbar-brand" href="#">Cemquarium</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Startseite
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kontakt.php">Über uns</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kontakt.php">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <?php
+                    include 'loginlogoutbutton.php';
+                    ?>
+                </li>
 
-          <li class="nav-item">
-              <?php
-              include 'showwarenkorb.php';
-              ?>
-          </li>
+                <li class="nav-item">
+                    <?php
+                    include 'showwarenkorb.php';
+                    ?>
+                </li>
 
-        </ul>
-      </div>
-        <form class="form-inline">
-            <input class="form-control" type="text" placeholder="Suchen" aria-label="Search">
+            </ul>
+        </div>
+        <form action="search.php" class="form-inline" method="get">
+            <input class="form-control" type="text" name="search" placeholder="Suchen" aria-label="Search">
         </form>
     </div>
-  </nav>
-
+</nav>
   <!-- Page Content -->
   <div class="container">
 
@@ -72,7 +71,7 @@ include 'isLoggedIn.php';
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Willkommen im Shop</h1>
+        <h1 class="my-4">Kontakt</h1>
         <div class="btn-group">
                 <a  href="aquarium.php"><button type="button" class="btn btn-secondary">Aquarien</button></a>
                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

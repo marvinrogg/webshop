@@ -61,7 +61,7 @@ echo'
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ueberuns.php">Über uns</a>
+            <a class="nav-link" href="kontakt.php">Über uns</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="kontakt.php">Kontakt</a>
@@ -93,7 +93,7 @@ echo'
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Willkommen im Shop</h1>
+        <h1 class="my-4">Suchergebnis</h1>
 
           <!-- Example split danger button -->
           <div class="btn-group">

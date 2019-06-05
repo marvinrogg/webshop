@@ -39,7 +39,7 @@ include 'isLoggedIn.php';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ueberuns.php">Über uns</a>
+                    <a class="nav-link" href="kontakt.php">Über uns</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kontakt.php">Kontakt</a>
@@ -58,8 +58,8 @@ include 'isLoggedIn.php';
 
             </ul>
         </div>
-        <form class="form-inline">
-            <input class="form-control" type="text" placeholder="Suchen" aria-label="Search">
+        <form action="search.php" class="form-inline" method="get">
+            <input class="form-control" type="text" name="search" placeholder="Suchen" aria-label="Search">
         </form>
     </div>
 </nav>
@@ -71,7 +71,7 @@ include 'isLoggedIn.php';
 
         <div class="col-lg-3">
 
-            <h1 class="my-4">Willkommen im Shop</h1>
+            <h1 class="my-4">Suesswasser</h1>
 
             <!-- Example split danger button -->
             <div class="btn-group">

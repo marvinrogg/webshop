@@ -39,7 +39,7 @@ include 'isLoggedIn.php';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ueberuns.php">Über uns</a>
+                    <a class="nav-link" href="kontakt.php">Über uns</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kontakt.php">Kontakt</a>
@@ -58,50 +58,54 @@ include 'isLoggedIn.php';
 
             </ul>
         </div>
-        <form class="form-inline">
-            <input class="form-control" type="text" placeholder="Suchen" aria-label="Search">
+        <form action="search.php" class="form-inline" method="get">
+            <input class="form-control" type="text" name="search" placeholder="Suchen" aria-label="Search">
         </form>
     </div>
 </nav>
 
+
 <!-- Page Content -->
-  <div class="container">
+<div class="container">
 
     <div class="row">
 
-      <div class="col-lg-3">
-        <h1 class="my-4">Artikelansicht</h1>
-        <div class="list-group">
-          <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Kategorie1
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Unterkategorie1</a>
-              <a class="dropdown-item" href="#">Unterkategorie2</a>
+        <div class="col-lg-3">
 
+            <h1 class="my-4">Artikelansicht</h1>
+
+            <!-- Example split danger button -->
+            <div class="btn-group">
+                <a  href="aquarium.php"><button type="button" class="btn btn-secondary">Aquarien</button></a>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="suesswasser.php">Süßwasser</a>
+                    <a class="dropdown-item" href="meerwasser.php">Meerwasser</a>
+
+                </div>
             </div>
 
-          </div>
-          <br><br><br><br>
+            <br>
+            <br>
+            <br>
+            <br>
 
 
+            <div class="btn-group">
+                <a  href="aquariumtechnik.php"><button type="button" class="btn btn-secondary">Aqaurientechnik</button></a>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="pumpen.php">Pumpen</a>
+                    <a class="dropdown-item" href="heizung.php">Heizung</a>
 
-
-          <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Kategorie2
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Unterkategorie1</a>
-              <a class="dropdown-item" href="#">Unterkategorie2</a>
-
+                </div>
             </div>
 
-
-          </div>
         </div>
-      </div>
       <!-- /.col-lg-3 -->
 
         <?php
@@ -115,16 +119,16 @@ include 'isLoggedIn.php';
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+<footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Cemquarium 2019</p>
     </div>
     <!-- /.container -->
-  </footer>
+</footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
