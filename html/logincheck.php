@@ -27,21 +27,17 @@ if ($anzahl > 0) {
     if ($mysqli->connect_error){
         die("Verbindung zur DB fehlgeschlagen: " . $mysqli->connect_error);
     }
-    $sql = "SELECT id from Warenkorb WHERE User_username = ?;";
+
+    $sql = "INSERT INTO `Warenkorb`(`User_username`) VALUES (?);";
     $statement= $mysqli->prepare($sql);
     $statement->bind_param('s', $benutzer);
     $statement->execute();
-    $result = $statement->get_result();
-
-    while($row = $result->fetch_object()) {
-        $warenkorbid = $row->id;
-    }
-
-
+    $new_id = $statement->insert_id;
+    $_SESSION['warenkorbid'] = $new_id;
 
     session_start();
     $_SESSION['username'] = $benutzer;
-    $_SESSION['warenkorbid'] = $warenkorbid;
+    $_SESSION['warenkorbid'] = $new_id;
     header("location: index.php");
     exit();
 }else {

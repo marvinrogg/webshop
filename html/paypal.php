@@ -11,10 +11,11 @@ $sql = "SELECT p.name, p.id, p.beschreibung, p.preis, p.bild
         Where p.id = wp.Produkt_id 
         AND wp.Warenkorb_id = w.id 
         AND w.User_username = u.username 
-        AND u.username= ?;";
+        AND u.username= ?
+         AND w.id=?;";
 
 $statement = $mysqli->prepare($sql);
-$statement->bind_param('s', $_SESSION['username']);
+$statement->bind_param('ss', $_SESSION['username'], $_SESSION['warenkorbid']);
 $statement->execute();
 $result = $statement->get_result();
 
@@ -25,7 +26,7 @@ while ($row = $result->fetch_object()) {
     $name = "Warenkorb";
     $preis = $preis + $row->preis;
     $bild = $row->bild;
-    $idartikel .=  $row->id . 0;
+    $idartikel =  $_SESSION['warenkorbid'];
 }
 
 echo'

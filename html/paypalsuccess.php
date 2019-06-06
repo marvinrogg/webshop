@@ -27,13 +27,22 @@ if (!empty($txn_id) && $payment_gross /*== $productPrice*/) {
     //Check if payment data exists with the same TXN ID.
     $prevPaymentResult = $mysqli->query("SELECT payment_id FROM payments WHERE txn_id = '" . $txn_id . "'");
 
+
+
     if ($prevPaymentResult->num_rows > 0) {
         $paymentRow = $prevPaymentResult->fetch_assoc();
         $last_insert_id = $paymentRow['payment_id'];
     } else {
         //Insert tansaction data into the database
-        $insert = $mysqli->query("INSERT INTO payments(item_number,txn_id,payment_gross,currency_code,payment_status, payment_date, payment_user) VALUES('" . $item_number . "','" . $txn_id . "','" . $payment_gross . "','" . $currency_code . "','" . $payment_status . "','" . $payment_date . "','" . $payment_user . "')");
+        $insert = $mysqli->query("INSERT INTO payments(item_number,txn_id,payment_gross,currency_code,payment_status, payment_date) VALUES('" . $item_number . "','" . $txn_id . "','" . $payment_gross . "','" . $currency_code . "','" . $payment_status . "','" . $payment_date . "')");
         $last_insert_id = $mysqli->insert_id;
+
+        $sql = "INSERT INTO `Warenkorb`(`User_username`) VALUES (?);";
+        $statement= $mysqli->prepare($sql);
+        $statement->bind_param('s', $_SESSION['username']);
+        $statement->execute();
+        $new_id = $statement->insert_id;
+        $_SESSION['warenkorbid'] = $new_id;
     }
     ?>
 
