@@ -112,7 +112,8 @@ include 'isLoggedIn.php';
 
 
                 <?php
-                include 'readheizungfromdb.php'
+                include 'readitemsfromdb.php';
+                foo(7);
                 ?>
 
 

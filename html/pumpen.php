@@ -113,7 +113,8 @@ include 'isLoggedIn.php';
 
 
                 <?php
-                include 'readpumpenfromdb.php'
+                include 'readitemsfromdb.php';
+                foo(6);
                 ?>
 
 

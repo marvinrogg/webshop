@@ -112,7 +112,8 @@ include 'isLoggedIn.php';
 
 
                 <?php
-                include 'readaquariumfromdb.php'
+                include 'readitemsfromdb.php';
+                foo(2);
                 ?>
 
 

@@ -113,7 +113,8 @@ include 'isLoggedIn.php';
 
 
                 <?php
-                include 'readaquariumtechnikfromdb.php'
+                include 'readitemsfromdb.php';
+                foo(5);
                 ?>
 
 

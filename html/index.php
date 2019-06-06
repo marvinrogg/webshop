@@ -113,7 +113,8 @@ include 'isLoggedIn.php';
 
 
             <?php
-            include 'readitemfromdb.php'
+            include 'readitemsfromdb.php';
+            foo(1);
             ?>
 
 
